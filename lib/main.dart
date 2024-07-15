@@ -6,7 +6,8 @@ import 'src/state/pokemon_provider.dart';
 void main() {
   runApp(
     ChangeNotifierProvider(
-      create: (context) => PokemonProvider(), // Aqui é onde você cria o PokemonProvider
+      create: (context) =>
+          PokemonProvider(), // Aqui é onde você cria o PokemonProvider
       child: const NavigationBarApp(),
     ),
   );
@@ -18,6 +19,7 @@ class NavigationBarApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true),
       home: const NavigationComponent(),
     );

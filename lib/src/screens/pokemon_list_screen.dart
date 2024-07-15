@@ -14,7 +14,7 @@ class PokemonListScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pokémon List'),
+        title: const Text('Lista de Pokémons'),
       ),
       body: pokemonProvider.pokemonList.isEmpty
           ? const Center(child: CircularProgressIndicator())
@@ -32,8 +32,10 @@ class PokemonListScreen extends StatelessWidget {
                   ),
                   trailing: IconButton(
                     icon: Icon(
-                      pokemon.isFavorite ? Icons.favorite : Icons.favorite_border,
-                      color: pokemon.isFavorite ? Colors.red : null,
+                      pokemon.isFavorite ? Icons.star : Icons.star_border,
+                      color: pokemon.isFavorite
+                          ? const Color.fromARGB(171, 201, 182, 3)
+                          : null,
                     ),
                     onPressed: () {
                       pokemonProvider.toggleFavoriteStatus(pokemon);

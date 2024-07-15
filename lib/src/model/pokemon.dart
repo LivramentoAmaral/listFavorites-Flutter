@@ -1,5 +1,3 @@
-// lib/src/model/item.dart
-
 class Pokemon {
   final String name;
   final String url;
@@ -13,10 +11,13 @@ class Pokemon {
 
   factory Pokemon.fromJson(Map<String, dynamic> json) {
     return Pokemon(
-      name: json['name'],
-      url: json['url'],
+      name: json['name'] ?? '',
+      url: json['url'] ?? '',
     );
   }
 
-  get id => null;
+  int get id {
+    final idString = url.split('/').reversed.skip(1).first;
+    return int.tryParse(idString) ?? 0;
+  }
 }

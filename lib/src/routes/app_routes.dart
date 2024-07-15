@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 
 final Map<String, WidgetBuilder> appRoutes = {
+  
   '/': (context) => PokemonListScreen(),
   '/favorites': (context) => FavoritePokemonScreen(),
 };
