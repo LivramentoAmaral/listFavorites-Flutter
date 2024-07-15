@@ -39,7 +39,7 @@ class _NavigationComponentState extends State<NavigationComponent> {
       ),
       body: IndexedStack(
         index: _currentPageIndex,
-        children: <Widget>[
+        children: const <Widget>[
           PokemonListScreen(), // Primeira tela: Lista de Pokémon
           FavoritePokemonScreen(), // Segunda tela: Lista de Pokémon favoritos
         ],
